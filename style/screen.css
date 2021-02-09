@@ -1,0 +1,92 @@
+:root {
+    --font-stack-headers: 'Sarabun';
+    --font-stack-: -apple-system, system-ui, 
+
+    --theme-color-xxxxx-light: #f2ffff;
+    --theme-color-xxxx-light: #ebfaff;
+    --theme-color-xxx-light: #e3eeff;
+    --theme-color-xx-light: #c4c0ff;
+    --theme-color-x-light: #d0a1ff;
+    --theme-color-light: #f889ff;
+    --theme-color-base: #ff78cb;
+    --theme-color-dark: #ed49c8;
+    --theme-color-x-dark: #d732c4;
+    --theme-color-xx-dark: #be1db7;
+    --theme-color-xxx-dark: #9f0da3;
+    --theme-color-xxxx-dark: #770087;
+    --theme-color-xxxxx-dark: #3A0141;
+}
+
+html {
+}
+
+body {
+    font: 16px/1.5 var(--font-stack-headers);
+    color: var(--theme-color-xxxxx-dark);
+}
+
+.o-hide-accessible {
+
+}
+
+/* APP */
+.c-app {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.c-header {
+
+}
+
+.c-logo {
+}
+
+.c-logo__text {
+}
+
+
+.c-nav {
+}
+
+.c-nav-list {
+}
+
+.c-nav-list__item {
+}
+
+
+.c-counter {
+}
+
+.c-counter__current {
+}
+
+/*  */
+
+.c-countries {
+}
+
+.c-country {
+}
+
+.c-country__hidden-input {
+}
+
+.c-country__label {
+}
+
+.c-country__flag {
+}
+
+.c-country__details {
+}
+
+.c-country__name {
+}
+
+.c-country__native-name {
+}

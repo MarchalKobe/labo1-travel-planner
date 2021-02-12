@@ -61,6 +61,7 @@ body {
 
     /* appearance */
     background: var(--theme-color-xxxxx-dark);
+    box-shadow: 0 1px 4px 1px var(--theme-color-xx-light);
 
     /* other */
 }
@@ -110,9 +111,19 @@ body {
     padding-bottom: 2rem;
     
     border-bottom: 2px solid transparent;
+
+    cursor: pointer;
 }
 
 .c-nav-list__item:hover {
+    border-color: var(--theme-color-x-dark);
+}
+
+.c-nav-list__input:checked + .c-nav-list__item {
+    border-color: var(--theme-color-base);
+}
+
+.c-nav-list__input:checked + .c-nav-list__item {
     border-color: var(--theme-color-base);
 }
 
@@ -123,12 +134,40 @@ body {
 
 
 .c-counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    height: 100%;
+
+    padding: 0 2rem;
+    margin-right: -2rem;
+
+    background: var(--theme-color-xxxx-light);
+    color: var(--theme-color-xxxxx-dark);
+}
+
+.c-counter__count {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.c-counter__description {
+
 }
 
 .c-counter__current {
+    color: var(--theme-color-base)
 }
 
 /* COUNTRIES */
+.c-loader {
+}
+
+.c-loader__text {
+    font-size: 1.6rem;
+}
+
 .c-countries {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));

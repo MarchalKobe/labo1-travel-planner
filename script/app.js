@@ -1,7 +1,7 @@
-let countryHolder;
+let countryHolder, regionRadioButtons;
 
 const continents = {
-    africa: "Afrika",
+    africa: "Africa",
     americas: "Americas",
     asia: "Asia",
     europe: "Europe",
@@ -37,10 +37,21 @@ const getCountries = async (continent) => {
     renderCountries(data);
 };
 
+const enableNavigation = () => {
+    for(const radio of regionRadioButtons) {
+        radio.addEventListener("change", function() {
+            console.log(this.value);
+            getCountries(continents[this.value]);
+        });
+    }
+};
+
 const getDomElements = () => {
     countryHolder = document.querySelector(".js-countries");
+    regionRadioButtons = document.querySelectorAll(".js-region-radio");
 
-    getCountries(continents.europe);
+    getCountries(document.querySelector(".js-region-radio:checked").value);
+    enableNavigation();
 };
 
 const init = () => {

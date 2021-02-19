@@ -1,19 +1,21 @@
 :root {
     --font-stack-headers: 'Sarabun', Helvetica, Arial;
 
-    --theme-color-xxxxx-light: #f2ffff;
-    --theme-color-xxxx-light: #ebfaff;
-    --theme-color-xxx-light: #e3eeff;
-    --theme-color-xx-light: #c4c0ff;
-    --theme-color-x-light: #d0a1ff;
-    --theme-color-light: #f889ff;
-    --theme-color-base: #ff78cb;
-    --theme-color-dark: #ed49c8;
-    --theme-color-x-dark: #d732c4;
-    --theme-color-xx-dark: #be1db7;
-    --theme-color-xxx-dark: #9f0da3;
-    --theme-color-xxxx-dark: #770087;
-    --theme-color-xxxxx-dark: #3A0141;
+    --theme-color-hue: 0;
+
+    --theme-color-xxxxx-light: hsl(var(--theme-color-hue), 100%, 97.5%);
+    --theme-color-xxxx-light: hsl(var(--theme-color-hue), 100%, 96.1%);
+    --theme-color-xxx-light: hsl(var(--theme-color-hue), 100%, 94.5%);
+    --theme-color-xx-light: hsl(var(--theme-color-hue), 100%, 87.6%);
+    --theme-color-x-light: hsl(var(--theme-color-hue), 100%, 81.6%);
+    --theme-color-light: hsl(var(--theme-color-hue), 100%, 76.9%);
+    --theme-color-base: hsl(var(--theme-color-hue), 100%, 70%);
+    --theme-color-dark: hsl(var(--theme-color-hue), 100%, 60.8%);
+    --theme-color-x-dark: hsl(var(--theme-color-hue), 100%, 52%);
+    --theme-color-xx-dark: hsl(var(--theme-color-hue), 100%, 42.9%);
+    --theme-color-xxx-dark: hsl(var(--theme-color-hue), 100%, 34%);
+    --theme-color-xxxx-dark: hsl(var(--theme-color-hue), 100%, 26.5%);
+    --theme-color-xxxxx-dark: hsl(var(--theme-color-hue), 100%, 12.9%);
 }
 
 html {
@@ -171,6 +173,7 @@ body {
 .c-countries {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    grid-template-rows: auto; /* TODO: make own height */
     align-items: center;
     gap: 4rem 2rem;
 
@@ -227,4 +230,83 @@ body {
 .c-country__native-name {
     font-size: 1.1rem;
     opacity: 0.5;
+}
+
+/* Notifications */
+.c-notifications {
+    position: absolute;
+    right: 2rem;
+    top: 6rem;
+    bottom: 0;
+    max-width: 26rem;
+
+    padding-right: 0.25rem;
+    padding-bottom: 2rem;
+
+    overflow: auto;
+
+    pointer-events: none;
+}
+
+.c-notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+    background: var(--theme-color-xxxxx-light);
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+
+    pointer-events: all;
+}
+
+.c-notification + .c-notification {
+    margin-top: 1rem;
+}
+
+.c-notification__message {
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+}
+
+.c-notification__button {
+    all: unset; /* alle (default) styles verwijderen, let op, moet dan bovenaan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    
+    width: 3rem;
+    height: 3rem;
+    
+    font-size: 1.7rem;
+    line-height: 1;
+
+    border-radius: 50%;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.c-notification__button:hover {
+    background: var(--theme-color-xxx-light);
+}
+
+.c-notification__icon {
+    width: 2rem;
+    height: 2rem;
+    stroke-width: 3px;
+    stroke: var(--theme-color-xxxxx-dark);
+}
+
+.u-will-fade {
+    opacity: 1;
+    will-change: opacity;
+
+    transition: opacity 400ms ease-in-out;
+}
+
+.u-fading-out {
+    opacity: 0;
 }
